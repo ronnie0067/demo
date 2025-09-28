@@ -1,0 +1,193 @@
+/* General Body Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8A2BE2; /* A nice purple for events */
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8A2BE2;
+}
+
+/* Hero Section */
+.hero {
+    /* REMOVE the background-color and any previous particle-related styles if you want a pure image background */
+    /* background-color: #1a1a2e;  <-- Remove this if you're using a full background image */
+    
+    position: relative; /* Keep this to properly position the content on top */
+    height: 60vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Keep text white for contrast */
+    overflow: hidden; /* Important for background images, especially with parallax later */
+
+    /* --- ADD THESE LINES FOR THE BACKGROUND IMAGE --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/Users/ronnies/Downloads/wftff.jpg');
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    /* You can also add background-attachment: fixed; for a parallax scroll effect */
+}
+
+/* Ensure the content is above the background image */
+.hero-content {
+    position: relative; 
+    z-index: 2; /* Make sure this is higher than other potential background elements */
+    max-width: 800px; /* Adjust as needed for your text layout */
+    padding: 0 20px; /* Add some padding on smaller screens */
+}
+
+/* Any specific styling for your H1, P, CTA button within .hero-content can go here */
+.hero-content h1 {
+    font-size: 3.5rem; /* Adjust font size for impact */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Adds definition to text against image */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Adds definition to text against image */
+}
+
+.cta-button {
+    /* Existing button styles */
+    display: inline-block;
+    background-color: #8A2BE2; /* Your primary button color */
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #6a1b9a;
+}
+
+/* If you previously had #particles-js, you can remove its CSS here
+   or adjust its z-index if you want particles on top of the image. */
+#particles-js {
+    /* Remove or adjust if you want image only */
+    /* z-index: 1; */
+}
+
+/* Events Section */
+.events {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.events h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.event-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+
+.event-date {
+    color: #777;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
